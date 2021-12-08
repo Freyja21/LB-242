@@ -116,3 +116,7 @@ mbed_app.json
 
 Hier haben wir nur das Netzwerk angepasst.
 
+
+##Reflektion
+
+Das Modul war sehr hilfreich un dich konnte viel lernen. Da Frau Schmid vieles in den letzte Modulen für mich gemacht hat, habe ich dieses Projekt selbst gemacht. Zu Beginn war es schwer wirklich etwas zu finden, was ich machen könnte. AUch war es etwas schwierig den richtigen Einstieg in das Modul zu finden und was ich mir wo zusammen sammeln kann an Informationen. Dank eines Freundes von mir, mit dem ich den Tinderbot erstellt hatte, konnte ich einen guten Einstieg finden. Leider wurde durch Tinder unsere API für den Token gesperrt und ich konnte nicht gleich einen Ersazt finden. Deswegen haben wir das File nur so angepasst, dass es den Text anzeigt, welchen wir publishen. Dadurch haben wir eine Anzeigetafel erstellt. Wenn man einen anderen Token finden könnte, wäre die Änderung aber nicht gross um das File zum laufen zu lassen. 
