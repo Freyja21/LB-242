@@ -25,3 +25,12 @@ listener 1883 192.168.249.111
 allow_annonymous true
 ```
     
+4. Durch folgenden Command haben wir dann den Broker gestartet
+```
+sudo service mosquitto start
+```
+5. Zur Kontrolle haben wir folgenden Command benutzt, damit angezeigt wird, was genau alles passiert
+
+```
+mosquitto -v -c /etc/mosquitto/conf.d/mosquito.conf
+```
