@@ -9,20 +9,19 @@ Zu Beginn haben wir eine VM erstellt mit Kali Linux um darauf den MQTT Broker "M
 Wir haben Mosquitto folgendermassen installiert:
 
 1.  Geady installieren für die anpassungen im .conf file
-´´´
+```
 sudo apt install geady
-´´´
-
+```
   
 2. Mosquitto installieren 
-    
+    ```
     sudo apt install mosquitto
-   
+   ```
 3. .conf File anpassen
     
     Da im .conf File alles kommentiert war, haben wir alles gelöscht, ausser folgende Einträge:
-    
+    ```
     listener 1883 192.168.249.111
     allow_annonymous true
-    
+    ```
     
