@@ -9,10 +9,10 @@ Zu Beginn haben wir eine VM erstellt mit Kali Linux um darauf den MQTT Broker "M
 Wir haben Mosquitto folgendermassen installiert:
 
 1.  Geady installieren für die anpassungen im .conf file
+´´´
+sudo apt install geady
+´´´
 
-   ´´´
-    sudo apt install geady
-   ´´´
   
 2. Mosquitto installieren 
     
