@@ -36,3 +36,43 @@ sudo service mosquitto start
 ```
 mosquitto -v -c /etc/mosquitto/conf.d/mosquito.conf
 ```
+
+### IoT Kit
+
+Hier ging es ein wenig drunter und drüber. Ich hatte noch ein Programm für einen TinderBot, welches ich mit einen Freund von mir gemacht habe. Dies wollten wir zuerst implementieren und haben noch ein subscribe.py file und ein publish.py File erstellt mit folgenden ergänzenden EInträge:
+
+subscriber.py:
+
+```
+client = mqtt.Client()
+client.connect("192.168.249.111",1883,60)
+clientOled = mqtt.Client()
+clientOled.connect("192.168.249.111",1883,60)
+
+client.on_connect = on_connect
+client.on_message = on_message_default
+
+clientOled.on_connect = on_connect_oled
+
+client.loop_forever()
+```
+publisher.py
+```
+def publish(tinder_token):
+    client = mqtt.Client()
+    client.connect("192.168.249.111",1883,60)
+    client.publish("tinder", "hello <3")
+
+    tinder = TinderBotSms(tinder_token)
+    tinder.auto_swipe(5)
+    for person in tinder.get_persons():
+        client.publish("tinder","name: "+ person.name + "type: " +person.type )
+        if(person.type == "like"):
+   
+            subprocess.run(["oled.exe", ":)"])
+        else:
+            subprocess.run(["oled.exe", ":("])
+        sleep(3)
+    client.disconnect()
+    
+```
