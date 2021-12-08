@@ -76,3 +76,43 @@ def publish(tinder_token):
     client.disconnect()
     
 ```
+Da zuesrt das File nicht richtig funktioniert hat und wahrscheinlich Tinder nun gewisse Änderungen vorgenommen hat, welches nun unser Programm nicht mehr funktionieren lässt, haben wir in diesem File eine Änderung gemacht, das wir nun einfach eine Message auf dem Screen schreiben können. Leider hat uns die Zeit nicht gereicht das File anzupassen.
+
+
+Auf dem Kit haben wir vom Modul die Vorlage "mqtt" benutzt und darin unsere Anpassungen gemacht. Folgende Anpassungen haben wir vorgenommen:
+
+main.cpp
+
+```
+   
+    printf("MQTT subscribe %s\n", topicOled );
+    
+    oled.clear();
+    oled.printf(" :) ");
+    while(1){
+    client.yield    ( 1000 );                   // MQTT Client darf empfangen
+    thread_sleep_for( 500 );
+    }
+   
+}           
+```
+Hier haben wir den outprint verändert, damit sicher was angezeigt wird bei einem erfolgreichen publish. Natürlich wurden in diesem File auch die IP Adressen angepasst auf unser Netzwerk.
+
+
+mbed_app.json
+
+```
+{
+    "config": {
+        "wifi-ssid": {
+            "help": "WiFi SSID",
+            "value": "\"someone with better internet\""
+        },
+        "wifi-password": {
+            "help": "WiFi Password",
+            "value": "\"123456789\""
+        }
+```
+
+Hier haben wir nur das Netzwerk angepasst.
+
